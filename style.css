@@ -1544,61 +1544,377 @@ ul { list-style: none; }
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* Large Tablets & Small Laptops (1024px) */
 @media (max-width: 1024px) {
-    .features-grid { grid-template-columns: repeat(2, 1fr); }
-    .locations-grid { grid-template-columns: repeat(2, 1fr); }
+    .container { padding: 0 24px; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .locations-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .hero { min-height: auto; padding: 60px 0 120px; }
     .hero-title { font-size: 42px; }
-    .core-values-content { flex-direction: column; }
-    .roadmap-content { flex-direction: column; }
+    .hero-container { gap: 40px; }
+    .hero-image { max-width: 440px; }
+    .core-values-content { flex-direction: column; gap: 50px; }
+    .roadmap-content { flex-direction: column; gap: 50px; }
+    .roadmap-text .section-title { font-size: 30px; }
+    .section-title { font-size: 34px; }
     .courses-grid { grid-template-columns: 1fr; }
     .about-stats { flex-wrap: wrap; gap: 30px; }
+    .why-choose-us { padding: 80px 0 90px; }
+    .roadmap { padding: 80px 0; }
+    .testimonials { padding: 80px 0; }
+    .core-values { padding: 80px 0; }
+    .contact-cta { padding: 80px 0; }
+    .locations { padding: 80px 0; }
+    .testimonial-quote { font-size: 24px; }
+    .testimonials-slider { min-height: 300px; }
+    .college-content { padding: 60px 0; }
+    .trust-items { gap: 30px; }
+    .contact-form-section { padding: 80px 0; }
+    .about-section { padding: 80px 0; }
 }
 
+/* Tablets (768px) */
 @media (max-width: 768px) {
-    .top-info { justify-content: center; font-size: 12px; gap: 15px; }
+    .container { padding: 0 20px; }
+
+    /* Top Bar */
+    .top-bar { padding: 8px 0; }
+    .top-info { justify-content: center; font-size: 12px; gap: 12px; }
+
+    /* Navigation - Mobile Menu */
     .mobile-toggle { display: flex; }
     .nav-menu {
-        display: none; position: absolute; top: 100%; left: 0; right: 0;
-        background: var(--white); flex-direction: column;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.1); z-index: 200;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        z-index: 200;
+        max-height: 80vh;
+        overflow-y: auto;
     }
     .nav-menu.open { display: flex; }
-    .nav-menu > li > a { padding: 16px 24px; border-bottom: 1px solid var(--gray-100); }
+    .nav-menu > li > a {
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--gray-100);
+        font-size: 15px;
+    }
     .nav-menu > li > a::after { display: none; }
-    .dropdown { position: static; box-shadow: none; border-top: none; opacity: 1; visibility: visible; transform: none; display: none; border-radius: 0; }
+    .dropdown {
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        border-radius: 0;
+        min-width: auto;
+    }
     .has-dropdown.open .dropdown { display: block; }
-    .dropdown li a { padding-left: 44px; }
-    .hero { min-height: auto; padding: 60px 0 100px; }
-    .hero-container { flex-direction: column-reverse; text-align: center; }
-    .hero-content { max-width: 100%; }
-    .hero-title { font-size: 34px; }
-    .hero-desc { margin-left: auto; margin-right: auto; }
-    .hero-buttons { justify-content: center; }
-    .hero-image { max-width: 380px; }
-    .deco { display: none; }
-    .features-grid { grid-template-columns: 1fr; }
-    .section-title { font-size: 28px; }
-    .roadmap-images { grid-template-columns: 1fr; }
-    .locations-grid { grid-template-columns: 1fr; }
-    .contact-cta h2 { font-size: 30px; }
+    .dropdown li a { padding: 14px 24px 14px 44px; }
     .sticky-nav .nav-menu { display: none; }
     .sticky-nav .mobile-toggle { display: flex; }
-    .page-hero .hero-title { font-size: 30px; }
-    .page-hero .deco { display: none; }
-    .college-body h2, .college-section h2 { font-size: 22px; }
-    .college-cta { padding: 36px 24px; }
-    .about-stats { flex-direction: column; padding: 30px 20px; }
-    .courses-grid { grid-template-columns: 1fr; }
-    .trust-items { gap: 24px; }
-    .footer-content { justify-content: center; text-align: center; }
+
+    /* Hero */
+    .hero { min-height: auto; padding: 50px 0 90px; }
+    .hero-container { flex-direction: column-reverse; text-align: center; gap: 30px; }
+    .hero-content { max-width: 100%; }
+    .hero-title { font-size: 34px; letter-spacing: -0.5px; }
+    .hero-subtitle { font-size: 12px; letter-spacing: 2px; padding: 5px 14px; }
+    .hero-desc { margin-left: auto; margin-right: auto; font-size: 15px; margin-bottom: 28px; }
+    .hero-buttons { justify-content: center; }
+    .hero-image { max-width: 340px; margin: 0 auto; }
+    .hero-shape-bottom svg { height: 60px; }
+    .deco { display: none; }
+
+    /* Trust Bar */
+    .trust-bar { padding: 28px 0; }
+    .trust-items { gap: 20px; justify-content: center; }
+    .trust-item { font-size: 13px; gap: 8px; }
+    .trust-icon { width: 38px; height: 38px; border-radius: 10px; }
+    .trust-icon svg { width: 18px; height: 18px; }
+
+    /* Sections */
+    .section-header { margin-bottom: 40px; }
+    .section-title { font-size: 26px; }
+    .section-subtitle { font-size: 12px; letter-spacing: 2px; }
+    .why-choose-us { padding: 60px 0 70px; }
+    .roadmap { padding: 60px 0; }
+    .testimonials { padding: 60px 0; }
+    .core-values { padding: 60px 0; }
+    .contact-cta { padding: 60px 0; }
+    .locations { padding: 60px 0; }
+
+    /* Features */
+    .features-grid { grid-template-columns: 1fr; gap: 16px; }
+    .feature-card { padding: 30px 24px; }
+    .feature-card:hover { transform: translateY(-6px); }
+
+    /* Roadmap */
+    .roadmap-content { gap: 40px; }
+    .roadmap-text { text-align: center; }
+    .roadmap-text .section-subtitle { text-align: center; }
+    .roadmap-text .section-title { text-align: center; font-size: 26px; }
+    .roadmap-images { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .roadmap-img img { height: 160px; }
+
+    /* Testimonials */
+    .testimonial-quote { font-size: 20px; padding: 0 10px; }
+    .testimonials-header { margin-bottom: 36px; }
+    .testimonials-slider { min-height: auto; }
+    .testimonial-card { padding: 32px 24px; }
+    .testimonial-card::before { font-size: 80px; right: 20px; top: 10px; }
+    .testimonial-card-header h4 { font-size: 20px; }
+
+    /* Core Values / FAQ */
+    .core-values-content { gap: 40px; }
+    .core-values-left .section-title { text-align: center; font-size: 30px; }
+    .core-values-left .section-subtitle { text-align: center; }
     .core-values-experience { flex-wrap: wrap; justify-content: center; }
+    .exp-badge { padding: 16px 22px; }
+    .exp-badge .number { font-size: 28px; }
+    .accordion-header { padding: 18px 20px; font-size: 14px; }
+    .accordion-body { padding: 0 20px; }
+    .accordion-item.active .accordion-body { padding: 0 20px 18px; }
+
+    /* Contact CTA */
+    .contact-cta h2 { font-size: 28px; }
+    .contact-cta .cta-desc { font-size: 15px; }
+
+    /* Locations */
+    .locations-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .location-card { padding: 28px 20px; }
+    .location-card h3 { font-size: 18px; }
+    .location-card p { font-size: 13px; }
+    .location-pin { width: 44px; height: 44px; margin-bottom: 14px; }
+
+    /* Footer */
+    .footer { padding: 40px 0 24px; }
+    .footer-content { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+    .footer-logo img { height: 36px; }
+    .footer-socials { justify-content: center; }
+
+    /* Page Hero (Subpages) */
+    .page-hero { padding: 70px 0 50px; }
+    .page-hero .hero-title { font-size: 28px; }
+    .page-hero .hero-desc { font-size: 14px; }
+    .page-hero .deco { display: none; }
+
+    /* College Pages */
+    .college-content { padding: 50px 0; }
+    .college-body h2, .college-section h2 { font-size: 22px; }
+    .college-section h3 { font-size: 19px; }
+    .college-cta { padding: 36px 24px; margin-top: 40px; }
+    .college-cta h2 { font-size: 24px; }
+    .college-cta h3 { font-size: 20px; }
+    .college-list li { padding: 10px 0 10px 24px; font-size: 14px; }
+    .college-list li::before { top: 17px; width: 6px; height: 6px; }
+    .courses-grid { grid-template-columns: 1fr; gap: 10px; }
+    .disclaimer { padding: 16px 20px; font-size: 14px; }
+
+    /* About Page */
+    .about-section { padding: 60px 0; }
+    .about-content p { font-size: 15px; }
+    .about-content p:first-child { font-size: 17px; }
+    .about-stats { flex-direction: column; padding: 30px 20px; gap: 24px; }
+    .stat-number { font-size: 42px; }
+    .stat-cta p { font-size: 18px; }
+
+    /* Contact Form */
+    .contact-form-section { padding: 60px 0; }
+    .contact-wrapper { padding: 0; }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea { padding: 14px 16px; font-size: 14px; }
+    .contact-form label { font-size: 12px; }
+
+    /* Buttons */
+    .btn { padding: 13px 28px; font-size: 13px; }
 }
 
-@media (max-width: 480px) {
+/* Large Phones (576px) */
+@media (max-width: 576px) {
     .hero-title { font-size: 30px; }
     .hero { padding: 40px 0 80px; }
-    .testimonial-card { padding: 30px; }
+    .hero-image { max-width: 280px; }
+    .hero-desc { font-size: 14px; line-height: 1.7; }
+
+    .trust-items { flex-direction: column; gap: 14px; }
+    .trust-item { justify-content: flex-start; width: 100%; max-width: 280px; }
+
+    .section-title { font-size: 24px; }
+    .section-header { margin-bottom: 30px; }
+
+    .features-grid { gap: 14px; }
+    .feature-card { padding: 28px 20px; }
+    .feature-card h3 { font-size: 16px; }
+    .feature-icon img { max-height: 70px; }
+
+    .roadmap-images { grid-template-columns: 1fr; gap: 14px; }
+    .roadmap-img img { height: 200px; }
+    .roadmap-text .section-title { font-size: 24px; }
+
+    .testimonial-quote { font-size: 18px; }
+    .testimonial-card { padding: 28px 20px; }
+    .testimonial-card-header h4 { font-size: 18px; }
+    .testimonial-card-body p { font-size: 14px; }
+    .testimonial-card-avatar { width: 60px; height: 60px; }
+    .testimonial-card::before { font-size: 60px; }
+
+    .core-values-left .section-title { font-size: 26px; }
+    .exp-badge .number { font-size: 24px; }
+    .exp-badge .label { font-size: 12px; }
+    .exp-badge { padding: 14px 18px; }
+    .accordion-header { font-size: 13px; padding: 16px 16px; gap: 12px; }
+    .accordion-body p { font-size: 13px; }
+    .accordion-item.active .accordion-body { padding: 0 16px 16px; }
+
+    .contact-cta h2 { font-size: 24px; }
+    .contact-cta .cta-desc { font-size: 14px; margin-bottom: 24px; }
+
+    .locations-grid { grid-template-columns: 1fr; gap: 14px; }
+    .location-card { padding: 24px 20px; }
+
+    .page-hero { padding: 60px 0 40px; }
+    .page-hero .hero-title { font-size: 24px; }
+    .page-hero .hero-desc { font-size: 13px; }
+    .page-hero .hero-subtitle { font-size: 11px; }
+    .page-hero-sm { padding: 50px 0 35px; }
+
+    .college-body h2, .college-section h2 { font-size: 20px; }
+    .college-section h3 { font-size: 17px; }
+    .college-cta { padding: 28px 18px; }
+    .college-cta h2 { font-size: 22px; }
+    .college-cta h3 { font-size: 18px; }
+
+    .about-content p { font-size: 14px; }
+    .about-content p:first-child { font-size: 15px; }
+    .stat-number { font-size: 36px; }
+    .stat-label { font-size: 13px; }
+
+    .footer-content { gap: 14px; }
+    .social-link { width: 36px; height: 36px; }
+}
+
+/* Small Phones (400px) */
+@media (max-width: 400px) {
+    .container { padding: 0 16px; }
+
+    .top-bar { padding: 6px 0; }
+    .top-info { gap: 8px; font-size: 11px; }
     .top-info li:nth-child(2) { display: none; }
-    .whatsapp-float { width: 50px; height: 50px; bottom: 20px; left: 20px; }
-    .go-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+    .top-info svg { width: 12px; height: 12px; }
+
+    .nav-container { min-height: 64px; }
+    .logo img { height: 40px; }
+
+    .hero { padding: 30px 0 60px; }
+    .hero-title { font-size: 26px; }
+    .hero-subtitle { font-size: 11px; letter-spacing: 1.5px; padding: 4px 12px; margin-bottom: 12px; }
+    .hero-desc { font-size: 13px; margin-bottom: 24px; }
+    .hero-image { max-width: 240px; }
+    .hero-buttons { flex-direction: column; gap: 12px; width: 100%; }
+    .hero-buttons .btn { width: 100%; justify-content: center; }
+
+    .section-title { font-size: 22px; }
+    .section-subtitle { font-size: 11px; letter-spacing: 1.5px; padding: 4px 12px; }
+
+    .feature-card { padding: 24px 16px; }
+    .feature-card h3 { font-size: 15px; margin-bottom: 10px; }
+    .feature-card p { font-size: 13px; }
+    .feature-icon img { max-height: 60px; }
+    .feature-divider { width: 40px; margin-bottom: 10px; }
+
+    .testimonial-quote { font-size: 16px; }
+    .testimonial-card { padding: 24px 16px; }
+    .testimonial-card-header h4 { font-size: 16px; }
+    .testimonial-card-body p { font-size: 13px; line-height: 1.75; }
+    .testimonial-card-avatar { width: 52px; height: 52px; }
+    .testimonial-card::before { display: none; }
+    .testimonial-dots { margin-top: 24px; }
+
+    .core-values-experience { gap: 12px; }
+    .exp-badge { padding: 12px 14px; }
+    .exp-badge .number { font-size: 22px; }
+    .accordion-header { font-size: 12px; padding: 14px 14px; }
+    .accordion-body p { font-size: 12px; line-height: 1.75; }
+
+    .contact-cta h2 { font-size: 22px; }
+    .contact-cta .cta-desc { font-size: 13px; }
+    .contact-cta { padding: 50px 0; }
+
+    .location-card { padding: 22px 16px; }
+    .location-card h3 { font-size: 16px; margin-bottom: 6px; }
+    .location-card p { font-size: 12px; }
+    .location-pin { width: 40px; height: 40px; margin-bottom: 12px; }
+    .location-pin svg { width: 20px; height: 20px; }
+
+    .page-hero { padding: 50px 0 35px; }
+    .page-hero .hero-title { font-size: 22px; }
+
+    .college-body h2, .college-section h2 { font-size: 18px; padding-bottom: 8px; }
+    .college-section h3 { font-size: 16px; margin-top: 20px; }
+    .college-section { margin-top: 36px; }
+    .college-list li { font-size: 13px; padding: 8px 0 8px 22px; }
+    .college-list li::before { width: 5px; height: 5px; top: 15px; }
+    .college-cta { padding: 24px 16px; margin-top: 30px; }
+    .college-cta h2 { font-size: 20px; margin-bottom: 10px; }
+    .college-cta h3 { font-size: 16px; }
+
+    .about-content p { font-size: 13px; line-height: 1.8; }
+    .about-content p:first-child { font-size: 14px; }
+    .about-stats { padding: 24px 16px; gap: 20px; }
+    .stat-number { font-size: 32px; }
+    .stat-label { font-size: 12px; }
+    .stat-cta p { font-size: 16px; }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea { padding: 12px 14px; font-size: 14px; border-radius: 10px; }
+    .contact-form .btn { padding: 14px; font-size: 14px; }
+    .form-intro { font-size: 14px; }
+
+    .footer { padding: 30px 0 20px; }
+    .footer-logo img { height: 32px; }
+    .footer p { font-size: 12px; }
+
+    .btn { padding: 12px 24px; font-size: 12px; letter-spacing: 0.5px; }
+
+    .whatsapp-float { width: 48px; height: 48px; bottom: 16px; left: 16px; }
+    .whatsapp-float svg { width: 24px; height: 24px; }
+    .go-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; border-radius: 12px; }
+    .go-to-top svg { width: 18px; height: 18px; }
+
+    .why-choose-us, .roadmap, .testimonials, .core-values, .locations { padding: 50px 0; }
+    .about-section, .contact-form-section { padding: 50px 0; }
+    .college-content { padding: 40px 0; }
+}
+
+/* Touch device improvements */
+@media (hover: none) {
+    .feature-card:hover { transform: none; box-shadow: var(--shadow); }
+    .feature-card:hover::before { opacity: 0; }
+    .roadmap-img:hover img { transform: none; }
+    .roadmap-img:hover::after { opacity: 0; }
+    .location-card:hover { transform: none; }
+    .location-card:hover::before { transform: scaleX(0); }
+    .btn:hover { transform: none; }
+    .btn-primary:hover { box-shadow: 0 4px 20px rgba(14,169,96,0.3); }
+    .feature-card:active { transform: scale(0.98); }
+    .location-card:active { transform: scale(0.98); }
+    .btn:active { transform: scale(0.96); }
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero { min-height: auto; padding: 30px 0 60px; }
+    .hero-container { flex-direction: row; }
+    .hero-image { max-width: 300px; }
+    .hero-title { font-size: 28px; }
+    .page-hero { padding: 40px 0 30px; }
 }

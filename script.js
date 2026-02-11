@@ -1,12 +1,19 @@
 // ===== PRELOADER =====
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        setTimeout(() => {
-            preloader.classList.add('hidden');
-        }, 400);
+const preloader = document.getElementById('preloader');
+
+function hidePreloader() {
+    if (preloader && !preloader.classList.contains('hidden')) {
+        preloader.classList.add('hidden');
     }
+}
+
+// Hide preloader as soon as DOM is ready (don't wait for images)
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(hidePreloader, 300);
 });
+
+// Fallback: force hide after 2 seconds no matter what
+setTimeout(hidePreloader, 2000);
 
 // ===== STICKY NAVBAR =====
 const stickyNav = document.getElementById('stickyNav');
@@ -25,23 +32,54 @@ window.addEventListener('scroll', () => {
 });
 
 // ===== MOBILE MENU TOGGLE =====
-const mobileToggle = document.getElementById('mobileToggle');
-const navMenu = document.getElementById('navMenu');
-
-if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('open');
+// Handle all mobile toggle buttons (main nav + sticky nav)
+document.querySelectorAll('.mobile-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        // Find the sibling nav-menu within the same nav-container
+        const navContainer = toggle.closest('.nav-container');
+        const menu = navContainer ? navContainer.querySelector('.nav-menu') : document.getElementById('navMenu');
+        if (menu) {
+            menu.classList.toggle('open');
+            // Close other menus
+            document.querySelectorAll('.nav-menu.open').forEach(m => {
+                if (m !== menu) m.classList.remove('open');
+            });
+        }
     });
-}
+});
 
 // Mobile dropdown toggle
 document.querySelectorAll('.has-dropdown > a').forEach(link => {
     link.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
             e.preventDefault();
-            link.parentElement.classList.toggle('open');
+            // Close sibling dropdowns
+            const parent = link.parentElement;
+            const siblings = parent.parentElement.querySelectorAll('.has-dropdown');
+            siblings.forEach(s => {
+                if (s !== parent) s.classList.remove('open');
+            });
+            parent.classList.toggle('open');
         }
     });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+        const isNavClick = e.target.closest('.navbar');
+        if (!isNavClick) {
+            document.querySelectorAll('.nav-menu.open').forEach(m => m.classList.remove('open'));
+        }
+    }
+});
+
+// Close mobile menu on window resize to desktop
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        document.querySelectorAll('.nav-menu.open').forEach(m => m.classList.remove('open'));
+        document.querySelectorAll('.has-dropdown.open').forEach(d => d.classList.remove('open'));
+    }
 });
 
 // ===== SCROLL ANIMATIONS =====
@@ -98,6 +136,32 @@ if (testimonialCards.length > 0) {
     }
 
     autoSlideInterval = setInterval(autoSlide, 5000);
+
+    // Touch swipe support for testimonials
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const slider = document.getElementById('testimonialSlider');
+
+    if (slider) {
+        slider.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        slider.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    // Swipe left - next slide
+                    showSlide((currentSlide + 1) % testimonialCards.length);
+                } else {
+                    // Swipe right - prev slide
+                    showSlide((currentSlide - 1 + testimonialCards.length) % testimonialCards.length);
+                }
+                resetAutoSlide();
+            }
+        }, { passive: true });
+    }
 }
 
 // ===== ACCORDION =====
