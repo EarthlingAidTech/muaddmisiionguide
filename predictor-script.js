@@ -265,6 +265,11 @@ leadForm.addEventListener("submit", (e) => {
       email: leadEmail.value.trim(),
       phone: phone,
       state: state,
+      exam: examSelect.value,
+      category: categorySelect.value === "__all__" ? "All Categories" : categorySelect.value,
+      branch: branchSelect.value === "__all__" ? "All Branches" : branchSelect.value,
+      inputMode: mode,
+      inputValue: mode === "marks" ? marksInput.value : rankInput.value,
       source: "college-predictor"
     })
   })
