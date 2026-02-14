@@ -257,6 +257,17 @@ leadForm.addEventListener("submit", (e) => {
   submitBtn.disabled = true;
   submitBtn.textContent = "Submitting...";
 
+  // Calculate predicted rank before sending
+  var predictedRank = "";
+  var examData = data[examSelect.value];
+  if (mode === "marks" && examData) {
+    var marks = parseFloat(marksInput.value);
+    var range = getRankRange(marks, examData.historicalMarksToRank, examData.totalMarks);
+    predictedRank = "#" + range.best.toLocaleString() + " – #" + range.worst.toLocaleString();
+  } else if (mode === "rank") {
+    predictedRank = "#" + parseInt(rankInput.value).toLocaleString();
+  }
+
   fetch("https://myadmissionguide.vercel.app/api/leads", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -270,6 +281,7 @@ leadForm.addEventListener("submit", (e) => {
       branch: branchSelect.value === "__all__" ? "All Branches" : branchSelect.value,
       inputMode: mode,
       inputValue: mode === "marks" ? marksInput.value : rankInput.value,
+      predictedRank: predictedRank,
       source: "college-predictor"
     })
   })

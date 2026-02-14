@@ -541,14 +541,16 @@ ul { list-style: none; }
     box-shadow: 0 8px 25px rgba(14,169,96,0.15);
 }
 
-.hero .btn-outline {
-    color: var(--white);
+.hero .btn-outline,
+.hero .btn-outline:link,
+.hero .btn-outline:visited {
+    color: #ffffff !important;
     border-color: rgba(255,255,255,0.4);
 }
 
 .hero .btn-outline:hover {
-    border-color: var(--white);
-    color: var(--white);
+    border-color: #ffffff;
+    color: #ffffff !important;
     background: rgba(255,255,255,0.1);
 }
 
