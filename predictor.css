@@ -1,5 +1,5 @@
 /* ===== COLLEGE PREDICTOR PAGE STYLES ===== */
-/* Themed to match myadmissionguide.in dark + green color scheme */
+/* Themed to match myadmissionguide.in light + green color scheme */
 
 /* Page hero em styling */
 .page-hero .hero-title em {
@@ -11,7 +11,7 @@
 .predictor-page {
     position: relative;
     padding: 60px 0 80px;
-    background: var(--dark);
+    background: var(--gray-50);
     overflow: hidden;
     min-height: 400px;
 }
@@ -66,11 +66,11 @@
 
 /* ===== INPUT CARD ===== */
 .predictor-page .input-card {
-    background: var(--dark-2);
-    border: 1px solid rgba(255,255,255,0.06);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
     border-radius: var(--radius);
     padding: 32px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
 }
 
 .predictor-page .field label {
@@ -80,7 +80,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     font-weight: 700;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
     text-transform: uppercase;
     letter-spacing: 0.04em;
     margin-bottom: 8px;
@@ -107,7 +107,7 @@
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid rgba(255,255,255,0.4);
+    border-top: 5px solid var(--text-light);
     pointer-events: none;
 }
 
@@ -117,9 +117,9 @@
     padding: 14px 16px;
     font-family: 'Inter', sans-serif;
     font-size: 15px;
-    color: var(--white);
-    background: var(--dark-3);
-    border: 2px solid rgba(255,255,255,0.08);
+    color: var(--dark);
+    background: var(--gray-50);
+    border: 2px solid var(--gray-200);
     border-radius: var(--radius-sm);
     appearance: none;
     -webkit-appearance: none;
@@ -148,8 +148,8 @@
 /* ---- Mode Toggle ---- */
 .predictor-page .mode-toggle {
     display: flex;
-    background: var(--dark-3);
-    border: 2px solid rgba(255,255,255,0.08);
+    background: var(--gray-50);
+    border: 2px solid var(--gray-200);
     border-radius: var(--radius-sm);
     padding: 4px;
     gap: 4px;
@@ -161,7 +161,7 @@
     border: none;
     border-radius: 8px;
     background: transparent;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -169,12 +169,12 @@
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 .predictor-page .mode-btn.active {
-    background: var(--dark-2);
+    background: var(--white);
     color: var(--primary);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 .predictor-page .mode-btn:not(.active):hover {
-    color: var(--white);
+    color: var(--dark);
 }
 
 /* ---- Filter Row ---- */
@@ -263,7 +263,7 @@
 
 /* ---- Rank Banner ---- */
 .predictor-page .rank-banner {
-    background: linear-gradient(135deg, rgba(14,169,96,0.12) 0%, rgba(6,214,160,0.08) 50%, rgba(14,169,96,0.05) 100%);
+    background: linear-gradient(135deg, var(--primary-light) 0%, #d4f5e4 50%, #e8f5e9 100%);
     border: 2px solid rgba(14, 169, 96, 0.2);
     border-radius: var(--radius);
     padding: 24px 28px;
@@ -285,7 +285,7 @@
 .predictor-page .rank-title {
     font-size: 12px;
     font-weight: 700;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
     text-transform: uppercase;
     letter-spacing: 0.04em;
     font-family: 'Poppins', sans-serif;
@@ -303,7 +303,7 @@
 }
 .predictor-page .rank-sub {
     font-size: 12px;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
     margin-top: 4px;
     font-weight: 500;
 }
@@ -313,13 +313,13 @@
     flex-wrap: wrap;
 }
 .predictor-page .tag {
-    background: var(--dark-3);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 11px;
     font-weight: 600;
-    color: rgba(255,255,255,0.6);
+    color: var(--text-light);
     font-family: 'Inter', sans-serif;
 }
 
@@ -331,12 +331,12 @@
     gap: 10px;
     margin-top: 16px;
     padding-top: 16px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid var(--gray-200);
 }
 .predictor-page .rank-picker label {
     font-size: 12px;
     font-weight: 700;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -351,7 +351,7 @@
 .predictor-page .range-label {
     font-size: 11px;
     font-weight: 700;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
 }
@@ -361,7 +361,7 @@
     appearance: none;
     height: 6px;
     border-radius: 3px;
-    background: rgba(255,255,255,0.1);
+    background: var(--gray-200);
     outline: none;
     cursor: pointer;
 }
@@ -372,7 +372,7 @@
     height: 20px;
     border-radius: 50%;
     background: var(--primary);
-    border: 3px solid var(--dark-2);
+    border: 3px solid var(--white);
     box-shadow: 0 2px 8px rgba(14, 169, 96, 0.3);
     cursor: pointer;
     transition: transform 0.15s;
@@ -385,7 +385,7 @@
     height: 20px;
     border-radius: 50%;
     background: var(--primary);
-    border: 3px solid var(--dark-2);
+    border: 3px solid var(--white);
     box-shadow: 0 2px 8px rgba(14, 169, 96, 0.3);
     cursor: pointer;
 }
@@ -395,9 +395,9 @@
     font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-weight: 600;
-    color: var(--white);
-    background: var(--dark-3);
-    border: 2px solid rgba(255,255,255,0.08);
+    color: var(--dark);
+    background: var(--white);
+    border: 2px solid var(--gray-200);
     border-radius: var(--radius-sm);
     text-align: center;
     font-variant-numeric: tabular-nums;
@@ -422,7 +422,7 @@
 .predictor-page .results-bar h2 {
     font-size: 18px;
     font-weight: 700;
-    color: var(--white);
+    color: var(--dark);
 }
 .predictor-page .count-pill {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -438,27 +438,27 @@
 .predictor-page .empty-state {
     text-align: center;
     padding: 48px 24px;
-    background: var(--dark-2);
-    border: 1px solid rgba(255,255,255,0.06);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
     border-radius: var(--radius);
 }
 .predictor-page .empty-emoji { font-size: 3rem; margin-bottom: 12px; }
-.predictor-page .empty-main { font-weight: 700; font-size: 17px; color: var(--white); }
-.predictor-page .empty-sub { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 6px; }
+.predictor-page .empty-main { font-weight: 700; font-size: 17px; color: var(--dark); }
+.predictor-page .empty-sub { font-size: 14px; color: var(--text-light); margin-top: 6px; }
 
 /* ===== COLLEGE TABLE (desktop) ===== */
 .predictor-page .college-table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    background: var(--dark-2);
+    background: var(--white);
     border-radius: var(--radius);
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.06);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 .predictor-page .college-table thead {
-    background: var(--dark-3);
+    background: var(--gray-50);
 }
 .predictor-page .college-table th {
     padding: 14px 16px;
@@ -467,13 +467,13 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
     text-align: left;
-    border-bottom: 2px solid rgba(255,255,255,0.06);
+    border-bottom: 2px solid var(--gray-200);
 }
 .predictor-page .college-table td {
     padding: 14px 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid var(--gray-100);
     font-size: 14px;
     vertical-align: middle;
 }
@@ -481,7 +481,7 @@
     transition: background 0.15s;
 }
 .predictor-page .college-table tbody tr:hover {
-    background: rgba(14,169,96,0.06);
+    background: var(--primary-light);
 }
 .predictor-page .college-table tbody tr:last-child td {
     border-bottom: none;
@@ -489,9 +489,9 @@
 .predictor-page .th-num { width: 3rem; text-align: center; }
 .predictor-page .th-cutoff { text-align: right; }
 .predictor-page .th-chance { text-align: center; width: 5.5rem; }
-.predictor-page .td-num { text-align: center; color: rgba(255,255,255,0.5); font-weight: 600; }
-.predictor-page .td-name { font-weight: 600; color: var(--white); }
-.predictor-page .td-cutoff { text-align: right; font-variant-numeric: tabular-nums; font-weight: 500; color: rgba(255,255,255,0.7); }
+.predictor-page .td-num { text-align: center; color: var(--text-light); font-weight: 600; }
+.predictor-page .td-name { font-weight: 600; color: var(--dark); }
+.predictor-page .td-cutoff { text-align: right; font-variant-numeric: tabular-nums; font-weight: 500; }
 .predictor-page .td-chance { text-align: center; }
 
 /* ---- Chance Badges ---- */
@@ -504,9 +504,9 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
 }
-.predictor-page .badge-safe { background: rgba(26,174,111,0.15); color: #1aae6f; }
-.predictor-page .badge-good { background: rgba(232,147,12,0.15); color: #e8930c; }
-.predictor-page .badge-reach { background: rgba(220,74,74,0.15); color: #dc4a4a; }
+.predictor-page .badge-safe { background: #eafbf3; color: #1aae6f; }
+.predictor-page .badge-good { background: #fef5e4; color: #e8930c; }
+.predictor-page .badge-reach { background: #fef0f0; color: #dc4a4a; }
 
 /* ===== COLLEGE CARDS (mobile) ===== */
 .predictor-page .college-list {
@@ -517,15 +517,15 @@
     margin-bottom: 0;
 }
 .predictor-page .college-card {
-    background: var(--dark-2);
-    border: 1px solid rgba(255,255,255,0.06);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
     border-radius: var(--radius-sm);
     padding: 16px 18px;
     display: flex;
     align-items: flex-start;
     gap: 14px;
     transition: box-shadow 0.2s, transform 0.15s;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 .predictor-page .college-card:active {
     transform: scale(0.985);
@@ -533,7 +533,7 @@
 .predictor-page .card-num {
     width: 28px;
     height: 28px;
-    background: rgba(14,169,96,0.15);
+    background: var(--primary-light);
     color: var(--primary);
     border-radius: 8px;
     display: flex;
@@ -550,7 +550,7 @@
     font-size: 15px;
     line-height: 1.3;
     margin-bottom: 6px;
-    color: var(--white);
+    color: var(--dark);
 }
 .predictor-page .card-meta {
     display: flex;
@@ -560,19 +560,19 @@
 }
 .predictor-page .card-branch {
     font-size: 12px;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
     font-weight: 500;
 }
 .predictor-page .card-separator {
     width: 3px;
     height: 3px;
-    background: rgba(255,255,255,0.3);
+    background: var(--text-light);
     border-radius: 50%;
     flex-shrink: 0;
 }
 .predictor-page .card-cutoff {
     font-size: 12px;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
     font-weight: 600;
 }
 .predictor-page .card-badge {
@@ -583,7 +583,7 @@
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(12, 18, 34, 0.7);
+    background: rgba(12, 18, 34, 0.5);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     z-index: 10000;
@@ -601,13 +601,13 @@
 }
 
 .modal-card {
-    background: var(--dark-2);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
     border-radius: var(--radius);
     padding: 36px 32px;
     width: 100%;
     max-width: 420px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     animation: cp-modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @keyframes cp-modalPop {
@@ -621,11 +621,11 @@
     font-weight: 800;
     letter-spacing: -0.02em;
     margin-bottom: 6px;
-    color: var(--white);
+    color: var(--dark);
 }
 .modal-sub {
     font-size: 14px;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
     margin-bottom: 24px;
 }
 
@@ -637,7 +637,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     font-weight: 700;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-light);
     text-transform: uppercase;
     letter-spacing: 0.04em;
     margin-bottom: 6px;
@@ -652,9 +652,9 @@
     padding: 12px 14px;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
-    color: var(--white);
-    background: var(--dark-3);
-    border: 2px solid rgba(255,255,255,0.08);
+    color: var(--dark);
+    background: var(--gray-50);
+    border: 2px solid var(--gray-200);
     border-radius: var(--radius-sm);
     transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -807,7 +807,7 @@
 @media (hover: none) {
     .predictor-page #predict-btn:hover:not(:disabled) { transform: none; }
     .predictor-page #predict-btn:active:not(:disabled) { transform: scale(0.98); }
-    .predictor-page .college-card:hover { box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+    .predictor-page .college-card:hover { box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
     .modal-submit:hover { transform: none; }
     .modal-submit:active { transform: scale(0.98); }
 }
