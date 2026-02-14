@@ -258,14 +258,15 @@ leadForm.addEventListener("submit", (e) => {
   submitBtn.textContent = "Submitting...";
 
   // Calculate predicted rank before sending
-  var predictedRank = "";
+  var predictedRank = { best: 0, worst: 0 };
   var examData = data[examSelect.value];
   if (mode === "marks" && examData) {
     var marks = parseFloat(marksInput.value);
     var range = getRankRange(marks, examData.historicalMarksToRank, examData.totalMarks);
-    predictedRank = "#" + range.best.toLocaleString() + " – #" + range.worst.toLocaleString();
+    predictedRank = { best: range.best, worst: range.worst };
   } else if (mode === "rank") {
-    predictedRank = "#" + parseInt(rankInput.value).toLocaleString();
+    var rank = parseInt(rankInput.value);
+    predictedRank = { best: rank, worst: rank };
   }
 
   fetch("https://myadmissionguide.vercel.app/api/leads", {
