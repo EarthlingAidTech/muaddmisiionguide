@@ -251,15 +251,39 @@ leadForm.addEventListener("submit", (e) => {
     return;
   }
 
-  // Save to localStorage
-  localStorage.setItem("cp_lead_captured", "1");
-  localStorage.setItem("cp_lead_name", name);
-  localStorage.setItem("cp_lead_email", leadEmail.value.trim());
-  localStorage.setItem("cp_lead_phone", phone);
-  localStorage.setItem("cp_lead_state", state);
+  // Send lead to admin backend
+  const submitBtn = leadForm.querySelector("button[type='submit']");
+  const originalText = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Submitting...";
 
-  leadModal.classList.add("hidden");
-  predict();
+  fetch("https://myadmissionguide.vercel.app/api/leads", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: name,
+      email: leadEmail.value.trim(),
+      phone: phone,
+      state: state,
+      source: "college-predictor"
+    })
+  })
+    .then((r) => r.json())
+    .then(() => {
+      localStorage.setItem("cp_lead_captured", "1");
+      leadModal.classList.add("hidden");
+      predict();
+    })
+    .catch(() => {
+      // Save locally as fallback and proceed
+      localStorage.setItem("cp_lead_captured", "1");
+      leadModal.classList.add("hidden");
+      predict();
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    });
 });
 
 // Close modal on overlay click (outside the card)
