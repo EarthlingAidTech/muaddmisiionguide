@@ -350,7 +350,7 @@ function renderColleges(matchRank) {
   let eligible = examData.colleges.filter((c) => c.cutoffRank >= matchRank);
   if (category !== "__all__") eligible = eligible.filter((c) => c.category === category);
   if (branch !== "__all__") eligible = eligible.filter((c) => c.branch === branch);
-  eligible.sort((a, b) => a.cutoffRank - b.cutoffRank);
+  eligible.sort((a, b) => b.cutoffRank - a.cutoffRank);
 
   // Heading
   const branchLabel = branch === "__all__" ? "All Branches" : branch;

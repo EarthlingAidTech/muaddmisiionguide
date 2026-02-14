@@ -250,6 +250,7 @@
 .predictor-page .results {
     margin-top: 40px;
 }
+.predictor-page .hidden { display: none !important; }
 .predictor-page .results.hidden { display: none !important; }
 
 /* Slide-in animation */
